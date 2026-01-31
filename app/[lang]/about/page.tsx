@@ -24,7 +24,7 @@ export default async function About({
                 <div className="container relative z-10 mx-auto px-4 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold mb-6">{dict.about.title}</h1>
                     <p className="text-xl max-w-3xl mx-auto opacity-90 leading-relaxed">
-                        البصرة هي القلب النابض للطاقة في العراق، و BasraVision هي رؤيتنا التكنولوجية لهذا القلب.
+                        شركة نفط البصرة هي القلب النابض للطاقة في العراق، و BasraVision هي رؤيتنا التكنولوجية لهذا القلب.
                     </p>
                 </div>
             </section>
