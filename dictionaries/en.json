@@ -87,5 +87,44 @@
         "research": "Research",
         "market": "Market",
         "contact": "Contact Us"
+    },
+    "hud": {
+        "battery": "Battery",
+        "signal": "Signal",
+        "gps": "GPS Status",
+        "altitude": "Altitude",
+        "mode": "Mode",
+        "auto": "Auto",
+        "stable": "Stable",
+        "connected": "Connected"
+    },
+    "payloads": {
+        "title": "Smart Payload Systems",
+        "ocr": {
+            "name": "AI OCR Camera",
+            "desc": "Precise reading of analog pressure and temperature gauges with instant digitization.",
+            "spec1": "99.9% Recognition Accuracy",
+            "spec2": "Edge Processing"
+        },
+        "thermal": {
+            "name": "Advanced Thermal",
+            "desc": "Detection of invisible heat and gas leaks with extreme precision in zero-light conditions.",
+            "spec1": "Sensitivity <30mK",
+            "spec2": "Geospatial Tagging"
+        },
+        "gas": {
+            "name": "Methane Gas Detector",
+            "desc": "Sensing gas leaks with ppm accuracy to ensure safety and environmental compliance.",
+            "spec1": "10ppm Sensitivity",
+            "spec2": "Instant Alerts"
+        }
+    },
+    "roi": {
+        "title": "Metrics That Matter",
+        "subtitle": "How BasraVision redefines efficiency, safety, and sustainability.",
+        "hours": "Man-hours Saved Annually",
+        "carbon": "Carbon Footprint Reduction",
+        "costs": "Operational Cost Savings",
+        "accuracy": "Data Accuracy Improvement"
     }
 }

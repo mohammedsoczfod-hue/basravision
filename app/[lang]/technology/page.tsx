@@ -2,6 +2,9 @@ import { getDictionary } from "@/dictionaries/dictionaries";
 import Header from "@/components/layout/Header";
 import Image from "next/image";
 import { Cpu, Zap, Thermometer, ShieldCheck } from "lucide-react";
+import FadeIn from "@/components/ui/FadeIn";
+import PayloadSelector from "@/components/tech/PayloadSelector";
+import MissionCycle from "@/components/tech/MissionCycle";
 
 export default async function Tech({
     params,
@@ -32,12 +35,6 @@ export default async function Tech({
         },
     ];
 
-    const steps = [
-        { title: "انطلاق", icon: "🚀" },
-        { title: "فحص", icon: "🔍" },
-        { title: "تحليل", icon: "📊" },
-        { title: "عودة", icon: "🏠" },
-    ];
 
     return (
         <main className="min-h-screen flex flex-col bg-grey-light">
@@ -50,6 +47,20 @@ export default async function Tech({
                     <p className="text-xl opacity-80 max-w-2xl mx-auto">
                         مستقبل مراقبة الطاقة اليوم بين يديك. تقنيات ذكية تعمل بتناغم لضمان الأمان والإنتاجية.
                     </p>
+                </div>
+            </section>
+
+            {/* Payload Systems - Elite UI Update */}
+            <section className="py-24 bg-white">
+                <div className="container mx-auto px-4">
+                    <FadeIn direction="up">
+                        <div className="text-center mb-16">
+                            <h2 className="text-4xl md:text-5xl font-extrabold text-primary mb-4">{dict.payloads.title}</h2>
+                            <div className="w-24 h-2 bg-accent mx-auto rounded-full" />
+                        </div>
+                    </FadeIn>
+
+                    <PayloadSelector dict={dict} />
                 </div>
             </section>
 
@@ -90,28 +101,10 @@ export default async function Tech({
                 </div>
             </section>
 
-            {/* Mission Cycle */}
-            <section className="py-24 bg-white">
+            {/* Mission Cycle - Elite UI Update */}
+            <section className="py-24">
                 <div className="container mx-auto px-4">
-                    <div className="bg-grey-dark text-white p-12 md:p-20 rounded-[3rem] shadow-2xl relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-
-                        <h2 className="text-3xl font-bold mb-16 text-center">{dict.tech.cycle}</h2>
-
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 relative z-10">
-                            {steps.map((step, i) => (
-                                <div key={i} className="flex flex-col items-center group">
-                                    <div className="w-24 h-24 bg-white/10 rounded-2xl flex items-center justify-center text-5xl mb-6 transition-all group-hover:bg-accent group-hover:-translate-y-2">
-                                        {step.icon}
-                                    </div>
-                                    <span className="font-bold text-xl">{step.title}</span>
-                                    {i < steps.length - 1 && (
-                                        <div className="hidden md:block absolute top-12 left-[12.5%] w-[25%] h-[2px] bg-white/20 -z-10 translate-x-[50%]" />
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                    <MissionCycle dict={dict} />
                 </div>
             </section>
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/ui/FadeIn";
+import HUD from "@/components/ui/HUD";
 
 export default function Hero({ dict, imagePath }: { dict: any; imagePath: string }) {
     return (
@@ -18,6 +19,9 @@ export default function Hero({ dict, imagePath }: { dict: any; imagePath: string
                 <div className="absolute inset-0 bg-gradient-to-r from-grey-dark/90 via-grey-dark/60 to-transparent rtl:bg-gradient-to-l" />
                 <div className="absolute inset-0 bg-gradient-to-t from-grey-dark/90 via-transparent to-transparent" />
             </div>
+
+            {/* HUD Overlay */}
+            <HUD dict={dict} />
 
             <div className="container relative z-10 mx-auto flex h-full flex-col justify-center px-6 md:px-12 text-white">
                 <div className="max-w-2xl rtl:mr-0 rtl:ml-auto ltr:mr-auto ltr:ml-0">

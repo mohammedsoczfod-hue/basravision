@@ -3,6 +3,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
 import Features from "@/components/home/Features";
+import ROICards from "@/components/home/ROICards";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -19,7 +20,7 @@ export default async function Home({
       <Header lang={lang} dict={dict} />
 
       <Hero dict={dict} imagePath="/hero_drone.png" />
-
+      <ROICards dict={dict} />
       <Features dict={dict} />
 
       {/* Secondary Hero / Market Preview */}
