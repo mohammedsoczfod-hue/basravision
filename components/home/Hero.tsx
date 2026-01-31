@@ -23,7 +23,7 @@ export default function Hero({ dict, imagePath }: { dict: any; imagePath: string
             {/* HUD Overlay */}
             <HUD dict={dict} />
 
-            <div className="container relative z-10 mx-auto flex h-full flex-col justify-center px-6 md:px-16 text-white pt-20">
+            <div className="container relative z-10 mx-auto flex h-full flex-col justify-center px-6 md:px-16 text-white pt-32 md:pt-20">
                 <div className="max-w-3xl rtl:mr-0 rtl:ml-auto ltr:mr-auto ltr:ml-0">
                     <FadeIn delay={0.2} direction="up">
                         <h1 className="mb-6 text-4xl font-extrabold tracking-tight md:text-6xl lg:text-7xl leading-tight drop-shadow-2xl">

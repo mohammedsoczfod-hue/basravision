@@ -14,11 +14,12 @@ export default function HUD({ dict }: { dict: any }) {
                             <Battery className="w-4 h-4 text-green-400" />
                             <span>89%</span>
                         </div>
-                        <div className="flex items-center space-x-2 rtl:space-x-reverse">
+                        {/* Hidden on mobile to prevent crowding */}
+                        <div className="hidden md:flex items-center space-x-2 rtl:space-x-reverse">
                             <Signal className="w-4 h-4 text-blue-400" />
                             <span>5.8 GHZ</span>
                         </div>
-                        <div className="flex items-center space-x-2 rtl:space-x-reverse text-white">
+                        <div className="hidden md:flex items-center space-x-2 rtl:space-x-reverse text-white">
                             <Navigation className="w-4 h-4 text-accent" />
                             <span>{dict.hud.gps}: {dict.hud.stable}</span>
                         </div>
@@ -87,11 +88,11 @@ export default function HUD({ dict }: { dict: any }) {
                 </FadeIn>
             </div>
 
-            {/* HUD Corner Accents */}
-            <div className="absolute top-0 left-0 w-32 h-32 border-l border-t border-accent/20 rounded-tl-3xl m-8 pointer-events-none" />
-            <div className="absolute top-0 right-0 w-32 h-32 border-r border-t border-accent/20 rounded-tr-3xl m-8 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-32 h-32 border-l border-b border-accent/20 rounded-bl-3xl m-8 pointer-events-none" />
-            <div className="absolute bottom-0 right-0 w-32 h-32 border-r border-b border-accent/20 rounded-br-3xl m-8 pointer-events-none" />
+            {/* HUD Corner Accents - Hidden on mobile */}
+            <div className="hidden md:block absolute top-0 left-0 w-32 h-32 border-l border-t border-accent/20 rounded-tl-3xl m-8 pointer-events-none" />
+            <div className="hidden md:block absolute top-0 right-0 w-32 h-32 border-r border-t border-accent/20 rounded-tr-3xl m-8 pointer-events-none" />
+            <div className="hidden md:block absolute bottom-0 left-0 w-32 h-32 border-l border-b border-accent/20 rounded-bl-3xl m-8 pointer-events-none" />
+            <div className="hidden md:block absolute bottom-0 right-0 w-32 h-32 border-r border-b border-accent/20 rounded-br-3xl m-8 pointer-events-none" />
         </div>
     );
 }
