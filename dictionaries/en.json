@@ -1,0 +1,91 @@
+{
+    "home": {
+        "hero": {
+            "title": "BasraVision – Smart Vision for the Future of Energy",
+            "subtitle": "Autonomous flight system for oil and gas well monitoring. Innovative solutions to reduce risks, cut costs, and improve operational efficiency.",
+            "cta": "Discover Technology"
+        },
+        "features": {
+            "title": "Our Core Technologies",
+            "flight": {
+                "title": "Programmed Flight",
+                "desc": "Precise paths and advanced geographic scanning for wells and facilities."
+            },
+            "ai": {
+                "title": "Artificial Intelligence",
+                "desc": "Optical Character Recognition (OCR) and high-precision data analysis."
+            },
+            "charging": {
+                "title": "Autonomous Charging",
+                "desc": "Smart charging platforms ensure continuous operation without human intervention."
+            }
+        }
+    },
+    "about": {
+        "title": "About BasraVision",
+        "story": "The BasraVision story began from the heart of technical and environmental challenges in Basra's oil fields. We aim to transform traditional monitoring through autonomous drone technologies.",
+        "vision": "Our Vision: To be the pioneers in autonomous flight solutions for heavy industries in the region.",
+        "mission": "Our Mission: To reduce human risks and improve operational efficiency through digital innovation.",
+        "values": {
+            "title": "Our Values",
+            "items": [
+                "Safety First",
+                "Environmental Sustainability",
+                "Technical Excellence"
+            ]
+        }
+    },
+    "tech": {
+        "title": "Technology & Innovation",
+        "sections": {
+            "flight": "Programmed Flight & Geographic Paths",
+            "ocr": "AI for Gauge Reading (OCR)",
+            "thermal": "Thermal Imaging Leak Detection",
+            "dock": "Autonomous Charging & Auto-Return"
+        },
+        "cycle": "Mission Cycle: Launch → Inspection → Analysis → Return"
+    },
+    "cases": {
+        "title": "Case Studies",
+        "global": "Global Success Stories (BP, Shell, ExxonMobil)",
+        "local": "BasraVision Scenario: 40% cost reduction and accident reduction."
+    },
+    "research": {
+        "title": "Research & Development",
+        "highlight": "Over 10 research papers in image processing and AI."
+    },
+    "market": {
+        "title": "Market & Investment",
+        "content": "Huge growth in industrial drone market in Iraq and Gulf countries."
+    },
+    "contact": {
+        "title": "Contact Us",
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "company": "Company",
+            "message": "Message",
+            "submit": "Send"
+        },
+        "info": "Email: info@basravision.com"
+    },
+    "footer": {
+        "desc": "Building the future of energy through smart technology and technical leadership in the heart of Basra.",
+        "links": "Quick Links",
+        "contact": "Contact Us",
+        "newsletter": "Newsletter",
+        "newsletter_desc": "Stay updated with the latest in industrial drone technology.",
+        "placeholder": "Your email address",
+        "subscribe": "Join",
+        "location": "Basra, Iraq"
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "tech": "Technology",
+        "cases": "Case Studies",
+        "research": "Research",
+        "market": "Market",
+        "contact": "Contact Us"
+    }
+}
