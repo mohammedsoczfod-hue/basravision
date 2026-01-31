@@ -9,17 +9,33 @@ export default function HUD({ dict }: { dict: any }) {
             {/* Top Bar HUD - Moved to top left/right to avoid center title */}
             <div className="absolute top-6 left-0 right-0 px-8 flex justify-between items-start">
                 <FadeIn direction="down" delay={0.8}>
-                    <div className="bg-grey-dark/80 backdrop-blur-xl border border-white/10 rounded-xl p-3 flex items-center space-x-6 rtl:space-x-reverse text-[10px] uppercase tracking-widest text-accent font-bold shadow-2xl">
-                        <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                            <Battery className="w-4 h-4 text-green-400" />
-                            <span>89%</span>
+                    <div className="bg-grey-dark/90 backdrop-blur-2xl border border-white/10 rounded-2xl p-4 flex items-center gap-6 rtl:gap-reverse text-[10px] uppercase tracking-widest text-accent font-bold shadow-2xl">
+                        {/* Power & Comms Container */}
+                        <div className="flex items-center gap-6 rtl:gap-reverse border-r border-white/10 pr-6 rtl:border-r-0 rtl:border-l rtl:pr-0 rtl:pl-6">
+                            <div className="flex items-center gap-2">
+                                <Battery className="w-4 h-4 text-green-400" />
+                                <span>89%</span>
+                            </div>
+                            <div className="hidden sm:flex items-center gap-2">
+                                <Signal className="w-4 h-4 text-blue-400" />
+                                <span>5.8 GHZ</span>
+                            </div>
                         </div>
-                        {/* Hidden on mobile to prevent crowding */}
-                        <div className="hidden md:flex items-center space-x-2 rtl:space-x-reverse">
-                            <Signal className="w-4 h-4 text-blue-400" />
-                            <span>5.8 GHZ</span>
+
+                        {/* Telemetry Container (Speed & Altitude) */}
+                        <div className="flex items-center gap-6 rtl:gap-reverse">
+                            <div className="flex flex-col gap-0.5">
+                                <span className="text-[8px] text-white/40 leading-none">{dict.hud.altitude}</span>
+                                <span className="text-white text-xs font-mono">125.4 M</span>
+                            </div>
+                            <div className="flex flex-col gap-0.5">
+                                <span className="text-[8px] text-white/40 leading-none">SPEED</span>
+                                <span className="text-blue-400 text-xs font-mono">42 KM/H</span>
+                            </div>
                         </div>
-                        <div className="hidden md:flex items-center space-x-2 rtl:space-x-reverse text-white">
+
+                        {/* GPS (Hidden on small mobile) */}
+                        <div className="hidden md:flex items-center gap-2 text-white border-l border-white/10 pl-6 rtl:border-l-0 rtl:border-r rtl:pl-0 rtl:pr-6">
                             <Navigation className="w-4 h-4 text-accent" />
                             <span>{dict.hud.gps}: {dict.hud.stable}</span>
                         </div>
@@ -37,21 +53,7 @@ export default function HUD({ dict }: { dict: any }) {
                 </FadeIn>
             </div>
 
-            {/* Side HUD Elements - Swapped logic to stay away from text */}
-            <div className="absolute top-1/3 bottom-0 left-12 flex flex-col justify-center gap-8 ltr:flex rtl:flex hidden lg:flex">
-                <FadeIn direction="right" delay={1.2}>
-                    <div className="flex flex-col gap-1 border-l-2 border-accent pl-4 py-4 bg-black/20 backdrop-blur-sm rounded-r-lg">
-                        <span className="text-[10px] text-accent font-bold uppercase tracking-widest">{dict.hud.altitude}</span>
-                        <span className="text-2xl font-mono font-bold text-white leading-none">125.4 M</span>
-                    </div>
-                </FadeIn>
-                <FadeIn direction="right" delay={1.4}>
-                    <div className="flex flex-col gap-1 border-l-2 border-blue-400 pl-4 py-4 bg-black/20 backdrop-blur-sm rounded-r-lg">
-                        <span className="text-[10px] text-white/70 font-bold uppercase tracking-widest">SPEED</span>
-                        <span className="text-xl font-mono font-bold text-blue-400 leading-none">42 KM/H</span>
-                    </div>
-                </FadeIn>
-            </div>
+            {/* Side HUD Elements Removed as they are now in the top bar */}
 
             {/* Hidden right side HUD to keep it clean in RTL */}
             <div className="absolute top-1/3 bottom-0 right-12 flex flex-col justify-center gap-8 hidden">
