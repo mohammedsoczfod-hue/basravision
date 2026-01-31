@@ -6,10 +6,10 @@ import FadeIn from "./FadeIn";
 export default function HUD({ dict }: { dict: any }) {
     return (
         <div className="absolute inset-0 pointer-events-none z-20">
-            {/* Top Bar HUD */}
-            <div className="absolute top-8 left-1/2 -translate-x-1/2 w-full max-w-4xl px-4 flex justify-between items-start">
+            {/* Top Bar HUD - Moved to top left/right to avoid center title */}
+            <div className="absolute top-6 left-0 right-0 px-8 flex justify-between items-start">
                 <FadeIn direction="down" delay={0.8}>
-                    <div className="bg-black/20 backdrop-blur-md border border-white/10 rounded-lg p-3 flex items-center space-x-6 rtl:space-x-reverse text-[10px] uppercase tracking-widest text-accent font-bold">
+                    <div className="bg-grey-dark/80 backdrop-blur-xl border border-white/10 rounded-xl p-3 flex items-center space-x-6 rtl:space-x-reverse text-[10px] uppercase tracking-widest text-accent font-bold shadow-2xl">
                         <div className="flex items-center space-x-2 rtl:space-x-reverse">
                             <Battery className="w-4 h-4 text-green-400" />
                             <span>89%</span>
@@ -20,51 +20,41 @@ export default function HUD({ dict }: { dict: any }) {
                         </div>
                         <div className="flex items-center space-x-2 rtl:space-x-reverse text-white">
                             <Navigation className="w-4 h-4 text-accent" />
-                            <span>GPS: {dict.hud.stable}</span>
+                            <span>{dict.hud.gps}: {dict.hud.stable}</span>
                         </div>
                     </div>
                 </FadeIn>
 
                 <FadeIn direction="down" delay={1.0}>
-                    <div className="bg-black/20 backdrop-blur-md border border-white/10 rounded-lg p-3 flex items-center space-x-4 rtl:space-x-reverse text-[10px] uppercase tracking-widest">
-                        <div className="flex items-center space-x-2 rtl:space-x-reverse text-white">
+                    <div className="bg-grey-dark/80 backdrop-blur-xl border border-white/10 rounded-xl p-3 flex items-center space-x-4 rtl:space-x-reverse text-[10px] uppercase tracking-widest shadow-2xl">
+                        <div className="flex items-center space-x-2 rtl:space-x-reverse text-white font-bold">
                             <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
                             <span>LIVE FEED</span>
                         </div>
-                        <div className="text-white opacity-50">4K | 60FPS</div>
+                        <div className="text-white opacity-50 font-mono">4K | 60FPS</div>
                     </div>
                 </FadeIn>
             </div>
 
-            {/* Side HUD Elements - Repositioned to avoid top bar overlap */}
-            <div className="absolute top-1/3 bottom-0 left-8 flex flex-col justify-center gap-8 ltr:flex rtl:hidden hidden lg:flex">
+            {/* Side HUD Elements - Swapped logic to stay away from text */}
+            <div className="absolute top-1/3 bottom-0 left-12 flex flex-col justify-center gap-8 ltr:flex rtl:flex hidden lg:flex">
                 <FadeIn direction="right" delay={1.2}>
-                    <div className="flex flex-col gap-1 border-l-2 border-accent/30 pl-4 py-4">
-                        <span className="text-[10px] text-accent/70 uppercase tracking-widest">{dict.hud.altitude}</span>
-                        <span className="text-2xl font-mono font-bold text-white">125.4 M</span>
+                    <div className="flex flex-col gap-1 border-l-2 border-accent pl-4 py-4 bg-black/20 backdrop-blur-sm rounded-r-lg">
+                        <span className="text-[10px] text-accent font-bold uppercase tracking-widest">{dict.hud.altitude}</span>
+                        <span className="text-2xl font-mono font-bold text-white leading-none">125.4 M</span>
                     </div>
                 </FadeIn>
                 <FadeIn direction="right" delay={1.4}>
-                    <div className="flex flex-col gap-1 border-l-2 border-white/10 pl-4 py-4">
-                        <span className="text-[10px] text-white/50 uppercase tracking-widest">SPEED</span>
-                        <span className="text-xl font-mono font-bold text-white text-blue-400">42 KM/H</span>
+                    <div className="flex flex-col gap-1 border-l-2 border-blue-400 pl-4 py-4 bg-black/20 backdrop-blur-sm rounded-r-lg">
+                        <span className="text-[10px] text-white/70 font-bold uppercase tracking-widest">SPEED</span>
+                        <span className="text-xl font-mono font-bold text-blue-400 leading-none">42 KM/H</span>
                     </div>
                 </FadeIn>
             </div>
 
-            <div className="absolute top-1/3 bottom-0 right-8 flex flex-col justify-center gap-8 rtl:flex ltr:hidden hidden lg:flex">
-                <FadeIn direction="left" delay={1.2}>
-                    <div className="flex flex-col gap-1 border-r-2 border-accent/30 pr-4 py-4 text-right">
-                        <span className="text-[10px] text-accent/70 uppercase tracking-widest">{dict.hud.altitude}</span>
-                        <span className="text-2xl font-mono font-bold text-white">125.4 م</span>
-                    </div>
-                </FadeIn>
-                <FadeIn direction="left" delay={1.4}>
-                    <div className="flex flex-col gap-1 border-r-2 border-white/10 pr-4 py-4 text-right">
-                        <span className="text-[10px] text-white/50 uppercase tracking-widest">السرعة</span>
-                        <span className="text-xl font-mono font-bold text-blue-400">42 كم/س</span>
-                    </div>
-                </FadeIn>
+            {/* Hidden right side HUD to keep it clean in RTL */}
+            <div className="absolute top-1/3 bottom-0 right-12 flex flex-col justify-center gap-8 hidden">
+                {/* Reserved for future expansion */}
             </div>
 
             {/* Bottom HUD - Status Card */}
